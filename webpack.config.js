@@ -3,6 +3,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const webpack = require('webpack');
 
 
 module.exports = {
@@ -64,6 +65,9 @@ module.exports = {
             {
                 reload: false                     // Sprečava da BrowserSync reloaduje stranu, da bi to uradio WebpackDev Server
             }
-        )
+        ),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        })
     ]
 };

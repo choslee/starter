@@ -37,8 +37,8 @@
     "webpack-dev-server": "^2.9.4"
   },
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server"
+    "dev"   : "SET NODE_ENV=development & webpack-dev-server",
+    "build" : "SET NODE_ENV=production & webpack -p"
   },
   "dependencies": {}
 }
